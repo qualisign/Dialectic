@@ -36,13 +36,13 @@
 Who will benefit:
 1.  those who'd like to understand an important or difficult topic
 2.  those who'd like to explain an important or difficult topic
-3.  future members of groups 1) or 2) for whom Dialectic make important or difficult topics relevant
+3.  future members of groups 1) or 2) for whom Dialectic makes important or difficult topics relevant/accessible
 
-Which topics are important?  We won't judge - they're simply the one's people care about.  Dialectic gives people a way to people to communicate about them with
+Which topics are important?  We won't judge - they're simply the one's people care about.  Dialectic gives people a way to communicate about them with
 more clarity.  Topics range from interpretations of Game of Thrones episodes to existential threats faced by humanity to JavaScript frameworks.  What Dialektic does
 for each of these is to facilitate the most meaningful exchange possible.
 
-![img](./diagrams/dialektic-class.png)
+![img](./diagrams/class-diagram.png)
 
 # Components of Dialectic:<a id="sec-1" name="sec-1"></a>
 
