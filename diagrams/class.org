@@ -1,0 +1,88 @@
+Benefactor --|> User
+
+class Project {
+funded: Bool
+producer: Producer
+followers: Consumer
+fund()  
+add(Producer)
+follow(Consumer)
+}
+
+Component o- Project
+
+Website o- Component
+
+class Text {
+
+}
+Text *- Section
+class Section {
+comment: String
+meaning: String
+}
+
+Section o- Meaning
+Section o- Comment
+
+class Comment {
+contents: String
+cost: Qualia
+price: Qualia/length(Contents)
+}
+
+class Meaning {
+contents: String
+cost: Qualia
+price: Qualia/length(Contents)
+}
+
+Meaning -- Qualia
+Comment -- Qualia
+User -- Qualia : update()
+
+
+Documentation -- Text
+
+
+
+Benefactor -- Project : fund()
+
+Project <|-- Documentation
+Project <|-- Argument
+Project <|-- Commentary
+Project <|-- Translation
+
+class Argument {
+question: String
+answer: String
+evidence
+}
+
+Translation "*" -- Text
+Commentary "*" -- "0..1" Text 
+
+class Producer {
+
+}
+Producer "1" -- "*" Project : produce()
+class Consumer {
+
+
+}
+
+class User {
+qualia: Qualia
+fund()
+produce()
+subscribe()
+
+}
+
+User <|-- Consumer
+User <|-- Producer
+
+Consumer "*" -- "*" Project : follow()
+Consumer "*" -- "*" Project : subscribe()
+Consumer -- Section : vote()
+Producer -- Section : partition()

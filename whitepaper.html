@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>whitepaper</title>
+<!-- 2017-08-27 So 17:57 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="David" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">whitepaper</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Components of Dialectic:</a>
+<ul>
+<li><a href="#sec-1-1">1.1. User</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1. Producer</a></li>
+<li><a href="#sec-1-1-2">1.1.2. Consumer</a></li>
+<li><a href="#sec-1-1-3">1.1.3. Benefactor</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2. Qualia</a></li>
+<li><a href="#sec-1-3">1.3. Project</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1. Commentary</a></li>
+<li><a href="#sec-1-3-2">1.3.2. Argument</a></li>
+<li><a href="#sec-1-3-3">1.3.3. Documentation</a></li>
+<li><a href="#sec-1-3-4">1.3.4. Translation</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4. Text</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1. Section</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5. Widget</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Who will benefit:
+</p>
+<ol class="org-ol">
+<li>those who'd like to understand an important or difficult topic
+</li>
+<li>those who'd like to explain an important or difficult topic
+</li>
+<li>those whom the app ushers into groups 1) or 2)
+</li>
+</ol>
+
+<p>
+Which topics are important?  We won't judge - they're simply the one's people care about.  Dialectic gives people a way to people to communicate about them with
+more clarity.  Topics range from interpretations of Game of Thrones episodes to existential threats faced by humanity to JavaScript frameworks.  What Dialektic does
+for each of these is to facilitate the most meaningful exchange possible.
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Components of Dialectic:</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> User</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Producer</h4>
+</div>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Consumer</h4>
+</div>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Benefactor</h4>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Qualia</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Qualia is an accounting system that represents units of cognition.  Users are given a certain amount of Qualia to begin with and are responsible for maintaining a positive
+balance if they'd like to continue to participate in Dialectic.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Project</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+There are ways of earning or losing Qualia that are unique to each project.
+</p>
+</div>
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Commentary</h4>
+<div class="outline-text-4" id="text-1-3-1">
+</div><ol class="org-ol"><li><a id="sec-1-3-1-1" name="sec-1-3-1-1"></a>Competitors<br  /><div class="outline-text-5" id="text-1-3-1-1">
+<ul class="org-ul">
+<li>Diskus
+</li>
+</ul>
+</div>
+</li>
+<li><a id="sec-1-3-1-2" name="sec-1-3-1-2"></a>Use Cases<br  /><ol class="org-ol"><li><a id="sec-1-3-1-2-1" name="sec-1-3-1-2-1"></a>As an editor of a periodic online journal, I am considering adding comment sections to our articles.  Given the caustic dialog comment sections often produce with<br  /><div class="outline-text-6" id="text-1-3-1-2-1">
+<p>
+controversial topics, I'm weary of creating one more outlet for trolling and hate.  I wish there were a prescriptive medium for facilitating commentary by readers
+that would shift the focus to content and away from allegiances.
+</p>
+</div>
+</li></ol>
+</li></ol>
+</div>
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Argument</h4>
+<div class="outline-text-4" id="text-1-3-2">
+</div><ol class="org-ol"><li><a id="sec-1-3-2-1" name="sec-1-3-2-1"></a>Competitors<br  /><div class="outline-text-5" id="text-1-3-2-1">
+<ul class="org-ul">
+<li>Quora
+</li>
+<li>Wikipedia
+</li>
+</ul>
+</div>
+</li>
+<li><a id="sec-1-3-2-2" name="sec-1-3-2-2"></a>Use Cases<br  /><ol class="org-ol"><li><a id="sec-1-3-2-2-1" name="sec-1-3-2-2-1"></a>As a believer in X, I would like a way of advocating my viewpoint where:<br  /><ol class="org-ol"><li><a id="sec-1-3-2-2-1-1" name="sec-1-3-2-2-1-1"></a>there is a mechanism to show the degree to which my arguments, and those of my opponents, conform to reality<br  /></li>
+<li><a id="sec-1-3-2-2-1-2" name="sec-1-3-2-2-1-2"></a>I do not have to repeat myself<br  /><div class="outline-text-7" id="text-1-3-2-2-1-2">
+<p>
+and talk in circles.  My argument stands as an artifact ready to be scrutinized.  It relates to a topic or question &#x2013; not a particular instance of misapprehension or
+oneupmanship I may be burdoned to address.
+</p>
+</div>
+</li>
+<li><a id="sec-1-3-2-2-1-3" name="sec-1-3-2-2-1-3"></a>those with essentially the same viewpoint can collaborate on an arguments<br  /><div class="outline-text-7" id="text-1-3-2-2-1-3">
+<p>
+Lines of reasoning that are more well thought out and systematic lend themselves to support from more angles than those wedged together by fallacious reasoning.
+Rather than having each person express their agreement by working on seperate instances or arguments, there should be a way of building onto arguments that are essentially
+the same, and not doing the same work twice.
+</p>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-3-2-2-2" name="sec-1-3-2-2-2"></a>As someone hoping to decide on a diet that's right for me<br  /><div class="outline-text-6" id="text-1-3-2-2-2">
+<p>
+I can't find a consensus.
+</p>
+</div>
+</li></ol>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Documentation</h4>
+<div class="outline-text-4" id="text-1-3-3">
+</div><ol class="org-ol"><li><a id="sec-1-3-3-1" name="sec-1-3-3-1"></a>Competitors<br  /><div class="outline-text-5" id="text-1-3-3-1">
+<ul class="org-ul">
+<li>Sphinx
+</li>
+</ul>
+</div>
+</li>
+<li><a id="sec-1-3-3-2" name="sec-1-3-3-2"></a>Use Cases<br  /><ol class="org-ol"><li><a id="sec-1-3-3-2-1" name="sec-1-3-3-2-1"></a>As the creator of a helpful but admittedly obscure JavaScript library<br  /><div class="outline-text-6" id="text-1-3-3-2-1">
+<p>
+I know that the tool I created won't be used if it's not understood.  This means I need to produce cogent documentation to attract readers.  One problem is that
+it is fairly difficult to explain to those without the domain knowledge I have how or why they should use my product.  To accelerate the adoption rate,
+I want to write the documentation in such a way that adapts to the understanding of the reader.  Those without the domain knowledge can create the foundation on which
+in-depth learning can follow later.
+</p>
+
+<p>
+This is in direct opposition to the most common methods of domain knowledge pedagogy: it is understood that there is complicated machinery under the hood of the tool
+you are trying to use, and newcomers are given an interface that hides this complexity, at the risk of occasional engendering of misconceptions that will need to be
+corrected later (hopefully before it makes itself known in the form of a bug in production-ready software).  The Dialectic approach to documentation is to keep the entirety of
+the object to be understood in mind at all times, but to arrive at a consensus as to what this object means to a variety of prospective users.
+</p>
+</div>
+</li>
+<li><a id="sec-1-3-3-2-2" name="sec-1-3-3-2-2"></a>As someone hoping to learn to code<br  /><div class="outline-text-6" id="text-1-3-3-2-2">
+<p>
+I am unable to find learning resources that don't assume background knowledge.
+</p>
+</div>
+</li></ol>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> Translation</h4>
+<div class="outline-text-4" id="text-1-3-4">
+</div><ol class="org-ol"><li><a id="sec-1-3-4-1" name="sec-1-3-4-1"></a>Competitors<br  /><div class="outline-text-5" id="text-1-3-4-1">
+<ul class="org-ul">
+<li>multilingual individuals &#x2013; disadvantage: are unable to collaborate effectively
+</li>
+<li>github/version control systems &#x2013; disadvantage: no easy/automatic way to establish consensus among many opinions
+</li>
+<li>translation services &#x2013; disadvantage: are expensive, represent very few viewpoints
+</li>
+<li>automatic translations &#x2013; disadvantage: are in need of correction/incapable of handling complex/subtle material
+</li>
+</ul>
+</div>
+</li>
+<li><a id="sec-1-3-4-2" name="sec-1-3-4-2"></a>Use Cases<br  /><ol class="org-ol"><li><a id="sec-1-3-4-2-1" name="sec-1-3-4-2-1"></a>As a blogger, I'd like to reach foreign-language readers<br  /><div class="outline-text-6" id="text-1-3-4-2-1">
+<p>
+Sometimes readers will offer to translate my articles into other languages.  I would like to give readers who want to get my content to fellow speakers of their language an easy tool to collaborate,
+so that participants in the translation process can multiply.
+</p>
+</div>
+</li>
+<li><a id="sec-1-3-4-2-2" name="sec-1-3-4-2-2"></a>As a polyglot, I'd like to work on translations but don't have the time to work single-handedly<br  /><div class="outline-text-6" id="text-1-3-4-2-2">
+<p>
+If there were some way to collaborate on the translation of texts, I'd be much more likely to contribute.
+</p>
+</div>
+</li></ol>
+</li></ol>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Text</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Section</h4>
+<div class="outline-text-4" id="text-1-4-1">
+</div><ol class="org-ol"><li><a id="sec-1-4-1-1" name="sec-1-4-1-1"></a>Meaning<br  /><div class="outline-text-5" id="text-1-4-1-1">
+<p>
+Created by a producer and subscribed to by a consumer.  A section of a text related to a project can have at most one meaning.
+</p>
+</div>
+</li>
+<li><a id="sec-1-4-1-2" name="sec-1-4-1-2"></a>Comment<br  /></li></ol>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Widget</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+The widget is an HTML5 web-component that allows the embedding of a project into another site.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: David</p>
+<p class="date">Created: 2017-08-27 So 17:57</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

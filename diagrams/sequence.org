@@ -1,0 +1,21 @@
+entity Dialectic
+actor Reader
+actor Creator
+database Firebase
+Creator -> Dialectic: createProject()
+Dialectic -> RemoteRepo : createRepo()
+activate RemoteRepo
+Dialectic -> Firebase : updateProjects()
+Reader -> Dialectic : findProject()
+activate Dialectic
+Dialectic -> Firebase : queryProjects()
+activate Firebase
+Firebase --> Dialectic : projects
+Dialectic --> Reader : project
+deactivate Dialectic
+Reader -> Dialectic : subscribe(Project)
+activate Dialectic
+Dialectic -> Firebase : subscribe(Project, User)
+Dialectic -> RemoteRepo : forkRepo()
+deactivate RemoteRepo
+deactivate Dialectic
