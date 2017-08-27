@@ -9,9 +9,9 @@ add(Producer)
 follow(Consumer)
 }
 
-Component o- Project
+Widget o- Project : generate()
 
-Website o- Component
+Website o- Widget : embed()
 
 class Text {
 
@@ -83,6 +83,8 @@ User <|-- Consumer
 User <|-- Producer
 
 Consumer "*" -- "*" Project : follow()
-Consumer "*" -- "*" Project : subscribe()
-Consumer -- Section : vote()
+
+Consumer -- Section : read()
+Consumer -- Meaning : subscribe()
+Producer -- Meaning : create()
 Producer -- Section : partition()
